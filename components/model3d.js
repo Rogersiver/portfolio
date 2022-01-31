@@ -95,10 +95,21 @@ const Model3d = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 2;
+    controls.enableZoom = false;
+    controls.maxPolarAngle = 1.5;
+    controls.minPolarAngle = 1;
+    controls.autoRotateSpeed = -2;
     renderer.setSize(window.innerWidth, 275);
-
     // mountRef.current.appendChild(renderer.domElement);
+
+    window.addEventListener("resize", onWindowResize, false);
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / 275;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(window.innerWidth, 275);
+    }
 
     camera.position.z = 15;
     camera.position.y = 3;
