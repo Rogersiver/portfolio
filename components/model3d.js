@@ -96,6 +96,7 @@ const Model3d = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
     controls.enableZoom = false;
+    controls.enablePan = false;
     controls.maxPolarAngle = 1.5;
     controls.minPolarAngle = 1;
     controls.autoRotateSpeed = -2;
