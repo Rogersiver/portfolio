@@ -4,7 +4,7 @@ export default function Toggle() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <header>
-      <Button size="xs" onClick={toggleColorMode}>
+      <Button onClick={toggleColorMode}>
         {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
       </Button>
     </header>

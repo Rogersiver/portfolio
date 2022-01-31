@@ -8,6 +8,7 @@ import {
   Spacer,
   Box,
 } from "@chakra-ui/react";
+import Model3d from "./model3d";
 import { Image } from "@chakra-ui/react";
 import Fonts from "./fonts";
 import Toggle from "./colorToggle";
@@ -17,13 +18,13 @@ const Nav = () => {
     <chakra.div>
       <Fonts />
       <Flex
+        maxWidth={600}
         textAlign="center"
         alignContent="center"
         alignItems="center"
-        m={2}
         p={2}
-        borderRadius={10}
-        backgroundColor={useColorModeValue("green.400", "green.600")}
+        mx="auto"
+        backgroundColor={useColorModeValue("gray.300", "#141214")}
       >
         <Link href="/">
           <a>
@@ -31,20 +32,13 @@ const Nav = () => {
           </a>
         </Link>
         <Text fontFamily="Fira Code" mx={4}>
-          Roger Siver 🖱️🧑🏼‍💻
+          Roger Siver
         </Text>
-        <Link href="/assets/Roger_Siver_CV.pdf">
-          <a target="_blank">cv</a>
-        </Link>
         <Spacer />
         <Toggle />
       </Flex>
-      <Box px={4}>
-        <Text fontSize="s">
-          Hey! I'm a Full-Stack Software Engineer and 3d designer based in New
-          Orleans Louisiana.{" "}
-        </Text>
-      </Box>
+      <Box px={4}></Box>
+      <Model3d />
     </chakra.div>
   );
 };
