@@ -13,23 +13,26 @@ const styles = {
   global: (props) => ({
     body: {
       color: mode("gray.800", "whiteAlpha.900")(props),
-      bg: mode("gray.100", "#141214")(props),
+      bg: mode("gray.50", "gray.900")(props),
+    },
+    a: {
+      color: mode("yellow.600", "yellow.900"),
     },
   }),
 };
 
 const colors = {
   gray: {
-    50: "#F0F2F4",
-    100: "#D6DBE1",
-    200: "#BBC4CE",
-    300: "#A0ACBA",
-    400: "#8695A7",
-    500: "#6B7E94",
-    600: "#566576",
-    700: "#404C59",
-    800: "#2B323B",
-    900: "#15191E",
+    50: "#F3F3F2",
+    100: "#DCDCDA",
+    200: "#C6C6C3",
+    300: "#AFAFAB",
+    400: "#999994",
+    500: "#83837C",
+    600: "#686864",
+    700: "#4E4E4B",
+    800: "#343432",
+    900: "#1A1A19",
   },
   red: {
     50: "#F7EDED",

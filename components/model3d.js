@@ -1,16 +1,16 @@
-import { useEffect, useRef } from "react";
-import { chakra, Flex } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
+import { chakra, Flex, Spinner, Center } from "@chakra-ui/react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const Model3d = () => {
   const mountRef = useRef(null);
-
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / 300,
+      10,
+      window.innerWidth / 275,
       0.1,
       1000
     );
@@ -19,8 +19,16 @@ const Model3d = () => {
     // const light = new THREE.AmbientLight(0xffffff, 10); // soft white light
     // scene.add(light);
 
-    const light2 = new THREE.DirectionalLight(0xffffff, 10);
-    light2.position.set(-2, 6, 0);
+    const manager = new THREE.LoadingManager();
+    manager.onStart = function (url, itemsLoaded, itemsTotal) {};
+
+    manager.onLoad = function () {
+      setLoading(false);
+      mountRef.current.appendChild(renderer.domElement);
+    };
+
+    const light2 = new THREE.DirectionalLight(0xffffff, 5);
+    light2.position.set(1, 4, -3);
     light2.castShadow = true;
     light2.shadow.camera.top = 2;
     light2.shadow.camera.bottom = -2;
@@ -30,8 +38,8 @@ const Model3d = () => {
     light2.shadow.camera.far = 14;
     scene.add(light2);
 
-    const light3 = new THREE.DirectionalLight(0xffffff, 10);
-    light3.position.set(0, 5, -3);
+    const light3 = new THREE.DirectionalLight(0xffffff, 6);
+    light3.position.set(-1, 3, 3);
     light3.castShadow = true;
     light3.shadow.camera.top = 2;
     light3.shadow.camera.bottom = -2;
@@ -41,7 +49,8 @@ const Model3d = () => {
     light3.shadow.camera.far = 14;
     scene.add(light3);
 
-    const loader = new GLTFLoader();
+    const loader = new GLTFLoader(manager);
+
     loader.load(
       // resource URL
       "/assets/car.gltf",
@@ -87,12 +96,12 @@ const Model3d = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
-    renderer.setSize(window.innerWidth, 300);
+    renderer.setSize(window.innerWidth, 275);
 
-    mountRef.current.appendChild(renderer.domElement);
+    // mountRef.current.appendChild(renderer.domElement);
 
-    camera.position.z = 2.8;
-    camera.position.y = 0.8;
+    camera.position.z = 15;
+    camera.position.y = 3;
     controls.update();
 
     var animate = function () {
@@ -106,9 +115,14 @@ const Model3d = () => {
   }, []);
 
   return (
-    <Flex alignContent={"center"} alignItems={"center"}>
-      <chakra.div m="auto" ref={mountRef}></chakra.div>
-    </Flex>
+    <chakra.div alignContent={"center"} alignItems={"center"}>
+      {isLoading && (
+        <Center>
+          <Spinner />
+        </Center>
+      )}
+      {!isLoading && <chakra.div m="auto" ref={mountRef}></chakra.div>}
+    </chakra.div>
   );
 };
 

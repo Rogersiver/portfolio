@@ -14,15 +14,15 @@ const Index = () => (
         want to know more. Check out my CV if you're looking to work!
       </Text>
       <Flex mx="auto" p={6} my={4}>
-        <Button>GitHub</Button>
-        <Spacer />
-        <Button colorScheme="linkedin">LinkedIn</Button>
-        <Spacer />
         <Button colorScheme="yellow">
           <Link href="/assets/Roger_Siver_CV.pdf">
             <a target="_blank">CV</a>
           </Link>
         </Button>
+        <Spacer />
+        <Button>GitHub</Button>
+        <Spacer />
+        <Button colorScheme="linkedin">LinkedIn</Button>
       </Flex>
     </chakra.div>
   </motion.div>
