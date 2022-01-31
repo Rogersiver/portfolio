@@ -1,4 +1,5 @@
 import Card from "../components/card";
+import { chakra } from "@chakra-ui/react";
 
 const projs = [
   {
@@ -30,6 +31,6 @@ const list = projs.map((proj, i) => {
   );
 });
 
-const Projects = () => <div>{list}</div>;
+const Projects = () => <chakra.div mb={4}>{list}</chakra.div>;
 
 export default Projects;
