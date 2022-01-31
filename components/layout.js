@@ -30,18 +30,6 @@ function Layout({ children }) {
       <Fonts />
       <Nav />
       <main>{children}</main>
-      <Text
-        position="fixed"
-        bottom="0"
-        width="100%"
-        textAlign="center"
-        mx="auto"
-        px={6}
-        pt={10}
-        pb={6}
-      >
-        &copy; Roger Siver 2022
-      </Text>
     </>
   );
 }

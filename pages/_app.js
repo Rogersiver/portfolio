@@ -1,8 +1,9 @@
-import { ChakraProvider, chakra } from "@chakra-ui/react";
+import { ChakraProvider, chakra, Text } from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/layout";
 import theme from "../components/theme";
 
-function MyApp({ Component }) {
+function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <chakra.div
@@ -12,7 +13,24 @@ function MyApp({ Component }) {
         alignItems="center"
       >
         <Layout />
-        <Component />
+        <AnimatePresence
+          exitBeforeEnter
+          initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} key={Component} />
+        </AnimatePresence>
+        <Text
+          // position="absolute"
+          opacity="50%"
+          bottom="0"
+          width="100%"
+          textAlign="center"
+          mx="auto"
+          px={6}
+        >
+          &copy; Roger Siver 2022
+        </Text>
       </chakra.div>
     </ChakraProvider>
   );

@@ -17,10 +17,7 @@ const Nav = () => {
   return (
     <chakra.div>
       <Fonts />
-      <chakra.div
-        backgroundColor={useColorModeValue("gray.200", "#141214")}
-        mx="auto"
-      >
+      <chakra.div backgroundColor={useColorModeValue("gray.200", "#141214")}>
         <Flex
           maxWidth={600}
           textAlign="center"
@@ -34,14 +31,19 @@ const Nav = () => {
               <Image src="/images/logo.png" boxSize={10} />
             </a>
           </Link>
-          <Text fontFamily="Fira Code" mx={4} fontSize="2xl">
-            Roger Siver
-          </Text>
+          <Link href="/">
+            <Text
+              fontFamily="Fira Code"
+              mx={4}
+              fontSize="2xl"
+              style={{ cursor: "pointer" }}
+            >
+              Roger Siver
+            </Text>
+          </Link>
           <Spacer />
           <Link href="/projects">
-            <Button mr={2}>
-              <a>Projects</a>
-            </Button>
+            <Button mr={2}>Projects</Button>
           </Link>
           <Toggle />
         </Flex>

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import MotionWrapper from "../components/motion";
 import Link from "next/link";
 import {
   chakra,
@@ -6,23 +6,30 @@ import {
   Flex,
   Spacer,
   Button,
-  useColorModeValue,
+  Image,
+  Tooltip,
 } from "@chakra-ui/react";
 const Index = () => (
-  <motion.div
-    animate={{ opacity: [0, 1], y: [-20, 0] }}
-    transition={{ duration: 1 }}
-  >
+  <MotionWrapper>
     <chakra.div mx="auto" maxWidth={500}>
+      <Tooltip label="It's Me!" colorScheme="yellow">
+        <Image
+          src="/assets/me.jpg"
+          boxSize="100px"
+          borderRadius="100%"
+          float="right"
+          m={2}
+        />
+      </Tooltip>
       <Text fontSize="lg" style={{ "text-indent": "10%" }} m={2}>
         Hey, I'm a Software Developer & Creative based in the USA. I love
-        designing, creating useful tools, and solving problems. Always looking
-        for new projects and the next tech. Check out my links & art if you want
-        to know more. Check out my CV if you're looking to work!
+        designing, creating useful tools, and solving problems. I am also an
+        Event Production Manager and Audio, Video, and Lighting Tech. Whether
+        its full-stack software or any live event, I'm your Engineer.
       </Text>
       <Text fontSize="lg" style={{ "text-indent": "10%" }} m={2}>
-        I am also an Event Production Manager and AVL Tech. Whether its
-        full-stack software or any live event, I'm your Engineer!
+        Check out my links & art if you want to know more, and check out my CV
+        if you're looking to work!
       </Text>
       <Flex mx="auto" p={6} my={4}>
         <Link href="/assets/Roger_Siver_CV.pdf">
@@ -38,7 +45,7 @@ const Index = () => (
         <Button colorScheme="linkedin">LinkedIn</Button>
       </Flex>
     </chakra.div>
-  </motion.div>
+  </MotionWrapper>
 );
 
 export default Index;
