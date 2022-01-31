@@ -16,7 +16,7 @@ const styles = {
       bg: mode("gray.50", "gray.900")(props),
     },
     a: {
-      color: mode("yellow.600", "yellow.900"),
+      color: mode("green.500", "green.50"),
     },
   }),
 };

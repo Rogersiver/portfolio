@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import {
   chakra,
   Box,
@@ -20,6 +18,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
           px={4}
           py={3}
           bg={useColorModeValue("white", "gray.800")}
+          boxShadow="dark-lg"
           rounded="md"
         >
           <Flex justifyContent="space-between" alignItems="center">

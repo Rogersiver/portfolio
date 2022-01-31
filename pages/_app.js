@@ -30,16 +30,18 @@ function MyApp({ Component, pageProps }) {
         </AnimatePresence>
         <Flex mx="auto" maxWidth={500} p={6} my={4}>
           <Link href="/assets/Roger_Siver_CV.pdf">
-            <Button colorScheme="yellow">
-              <chakra.a color={"black"} target="_blank">
-                CV
-              </chakra.a>
-            </Button>
+            <a target="_blank">
+              <Button colorScheme="green">CV</Button>
+            </a>
           </Link>
           <Spacer />
-          <Button>GitHub</Button>
+          <a href="https://github.com/Rogersiver">
+            <Button colorScheme="green">GitHub</Button>
+          </a>
           <Spacer />
-          <Button colorScheme="linkedin">LinkedIn</Button>
+          <a href="https://www.linkedin.com/in/roger-siver-652927138/">
+            <Button colorScheme="green">LinkedIn</Button>
+          </a>
         </Flex>
         <Text
           // position="absolute"
