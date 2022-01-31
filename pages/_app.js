@@ -1,5 +1,13 @@
-import { ChakraProvider, chakra, Text } from "@chakra-ui/react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChakraProvider,
+  chakra,
+  Text,
+  Flex,
+  Button,
+  Spacer,
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 import Layout from "../components/layout";
 import theme from "../components/theme";
 
@@ -20,6 +28,19 @@ function MyApp({ Component, pageProps }) {
         >
           <Component {...pageProps} key={Component} />
         </AnimatePresence>
+        <Flex mx="auto" maxWidth={500} p={6} my={4}>
+          <Link href="/assets/Roger_Siver_CV.pdf">
+            <Button colorScheme="yellow">
+              <chakra.a color={"black"} target="_blank">
+                CV
+              </chakra.a>
+            </Button>
+          </Link>
+          <Spacer />
+          <Button>GitHub</Button>
+          <Spacer />
+          <Button colorScheme="linkedin">LinkedIn</Button>
+        </Flex>
         <Text
           // position="absolute"
           opacity="50%"

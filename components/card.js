@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 
-import { chakra, Box, Flex, useColorModeValue, Link } from "@chakra-ui/react";
+import {
+  chakra,
+  Box,
+  Flex,
+  useColorModeValue,
+  Link,
+  Center,
+} from "@chakra-ui/react";
 
 const Card = ({ lang, techs, name, link, desc }) => {
   return (
@@ -8,7 +15,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
       <Flex p={4} w="full" alignItems="center" justifyContent="center">
         <Box
           w="full"
-          maxW="sm"
+          maxW="md"
           mx="auto"
           px={4}
           py={3}
@@ -52,14 +59,8 @@ const Card = ({ lang, techs, name, link, desc }) => {
               {desc}
             </chakra.p>
           </Box>
-
           <Box>
-            <Flex
-              alignItems="center"
-              mt={2}
-              color={useColorModeValue("gray.700", "gray.200")}
-            >
-              <span>Visit on:</span>
+            <Center mt={4}>
               <Link
                 mx={2}
                 cursor="pointer"
@@ -68,8 +69,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
               >
                 {link}
               </Link>
-            </Flex>
-
+            </Center>
             <Flex alignItems="center" justifyContent="center" mt={4}></Flex>
           </Box>
         </Box>

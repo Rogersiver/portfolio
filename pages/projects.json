@@ -1,23 +1,23 @@
 [
-{
-  "lang": "Arduino",
-  "techs": "Teensy/Pi",
-  "name": "Liquid Death Recycle Wall",
-  "link": "liquiddeath.com",
-  "desc": "Interractive marketing installation where recycled cans pushed through holes triggered lighting, audio, and special FX"
-},
+  {
+    "lang": "Arduino",
+    "techs": "Teensy/Pi",
+    "name": "Liquid Death Recycle Wall",
+    "link": "liquiddeath.com",
+    "desc": "Interactive marketing installation where recycled cans pushed through holes triggered lighting, audio, and special FX. All prefabricated software/structure and built on site for music events"
+  },
   {
     "lang": "typescript",
     "techs": "NodeJS + GraphQL",
     "name": "Wavepool",
     "link": "github.com",
-    "desc": "A spotify companion & a powerful utility for sharing songs through spotify with your friends"
+    "desc": "A spotify companion & powerful utility for sharing songs with your friends. Not only share songs, know how your friends feel about your recommendations"
   },
   {
     "lang": "Javascript",
     "techs": "MERN",
     "name": "Simple Counter",
     "link": "simplecounter.rocks",
-    "desc": "simple workout counter with API connection for exercise tutorials and a congratulations when your goal is reached"
+    "desc": "Simple workout counter with API connection for exercise tutorials and a congratulations for when your goal is reached 😎"
   }
 ]
