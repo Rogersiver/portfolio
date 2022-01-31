@@ -4,7 +4,7 @@ import { chakra, Text, Flex, Spacer, Button } from "@chakra-ui/react";
 const Index = () => (
   <motion.div
     animate={{ opacity: [0, 1], y: [-20, 0] }}
-    transition={{ duration: 2 }}
+    transition={{ duration: 1 }}
   >
     <chakra.div mx="auto" maxWidth={500}>
       <Text style={{ "text-indent": "10%" }} m={2}>

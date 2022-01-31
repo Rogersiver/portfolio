@@ -15,14 +15,43 @@ const Model3d = () => {
       1000
     );
     var renderer = new THREE.WebGLRenderer({ alpha: true });
-    const light = new THREE.AmbientLight(0xffffff, 5); // soft white light
-    scene.add(light);
+    renderer.shadowMap.enabled = true;
+    // const light = new THREE.AmbientLight(0xffffff, 10); // soft white light
+    // scene.add(light);
+
+    const light2 = new THREE.DirectionalLight(0xffffff, 10);
+    light2.position.set(-2, 6, 0);
+    light2.castShadow = true;
+    light2.shadow.camera.top = 2;
+    light2.shadow.camera.bottom = -2;
+    light2.shadow.camera.left = -2;
+    light2.shadow.camera.right = 2;
+    light2.shadow.camera.near = 0.1;
+    light2.shadow.camera.far = 14;
+    scene.add(light2);
+
+    const light3 = new THREE.DirectionalLight(0xffffff, 10);
+    light3.position.set(0, 5, -3);
+    light3.castShadow = true;
+    light3.shadow.camera.top = 2;
+    light3.shadow.camera.bottom = -2;
+    light3.shadow.camera.left = -2;
+    light3.shadow.camera.right = 2;
+    light3.shadow.camera.near = 0.1;
+    light3.shadow.camera.far = 14;
+    scene.add(light3);
+
     const loader = new GLTFLoader();
     loader.load(
       // resource URL
       "/assets/car.gltf",
       // called when the resource is loaded
       function (gltf) {
+        gltf.scene.traverse(function (child) {
+          if (child.isMesh) {
+            child.castShadow = true;
+          }
+        });
         scene.add(gltf.scene);
         gltf.animations; // Array<THREE.AnimationClip>
         gltf.scene; // THREE.Group
@@ -41,6 +70,20 @@ const Model3d = () => {
         console.log("An error happened");
       }
     );
+
+    const planeGeo = new THREE.PlaneGeometry(2000, 2000);
+    planeGeo.rotateX(-Math.PI / 2);
+
+    // const planeMat = new THREE.ShadowMaterial();
+    // planeMat.opacity = 0.5;
+    const planeMat = new THREE.ShadowMaterial();
+    planeMat.opacity = 0.2;
+
+    const plane = new THREE.Mesh(planeGeo, planeMat);
+    plane.position.y = -0.6;
+    plane.receiveShadow = true;
+    scene.add(plane);
+
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2;
