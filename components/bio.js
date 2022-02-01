@@ -1,3 +1,4 @@
+// bio.js
 import {
   chakra,
   Text,
