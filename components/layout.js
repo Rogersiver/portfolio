@@ -26,6 +26,7 @@ function Layout({ children }) {
           href="/images/favicon-16x16.png"
         />
         <link rel="manifest" href="/images/site.webmanifest" />
+        <title>Roger Siver</title>
       </Head>
       <Fonts />
       <Nav />
