@@ -10,7 +10,7 @@ const Model3d = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       10,
-      window.innerWidth / 275,
+      (window.innerWidth * 0.95) / 275,
       0.1,
       1000
     );
@@ -86,15 +86,15 @@ const Model3d = () => {
     controls.minPolarAngle = 1;
     controls.autoRotateSpeed = -2;
 
-    renderer.setSize(window.innerWidth, 275);
+    renderer.setSize(window.innerWidth * 0.95, 275);
 
     window.addEventListener("resize", onWindowResize, false);
 
     function onWindowResize() {
-      camera.aspect = window.innerWidth / 275;
+      camera.aspect = (window.innerWidth * 0.95) / 275;
       camera.updateProjectionMatrix();
 
-      renderer.setSize(window.innerWidth, 275);
+      renderer.setSize(window.innerWidth * 0.95, 275);
     }
 
     controls.update();
@@ -115,7 +115,11 @@ const Model3d = () => {
           <Spinner />
         </Center>
       )}
-      {!isLoading && <chakra.div m="auto" ref={mountRef}></chakra.div>}
+      {!isLoading && (
+        <Center>
+          <chakra.div m="auto" ref={mountRef}></chakra.div>
+        </Center>
+      )}
     </chakra.div>
   );
 };

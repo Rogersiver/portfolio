@@ -12,20 +12,18 @@ const Bio = () => {
     <chakra.div mx="auto" maxWidth={500}>
       <Box
         w="full"
-        maxW="md"
-        mx="auto"
         p={4}
-        bg={useColorModeValue("white", "gray.800")}
-        boxShadow="md"
+        bg={useColorModeValue("white", "gray.900")}
         rounded="md"
       >
         <Tooltip label="It's Me!" colorScheme="yellow">
           <Image
             src="/images/me.jpg"
-            boxSize="200px"
+            boxSize="150px"
             borderRadius="100%"
             float="right"
             m={2}
+            shadow="lg"
           />
         </Tooltip>
         <Text fontSize="md" style={{ "text-indent": "10%" }}>

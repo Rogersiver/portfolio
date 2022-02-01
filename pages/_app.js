@@ -8,10 +8,18 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <chakra.div
-        height="100%"
-        width="100%"
-        justifyContent="center"
-        alignItems="center"
+        overflowY="auto"
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "4px",
+          },
+          "&::-webkit-scrollbar-track": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            borderRadius: "24px",
+          },
+        }}
       >
         <Layout />
         <AnimatePresence

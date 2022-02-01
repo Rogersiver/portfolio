@@ -1,27 +1,29 @@
-import { Flex, Button, Spacer } from "@chakra-ui/react";
+import { Center, Button, ButtonGroup, Spacer } from "@chakra-ui/react";
 
 import Link from "next/link";
 
 const LinkButtons = () => {
   return (
-    <Flex mx="auto" maxWidth={500} p={6} my={4}>
-      <Link href="/assets/Roger_Siver_CV.pdf">
-        <a target="_blank">
-          <Button colorScheme="green">CV</Button>
+    <Center my={4}>
+      <ButtonGroup variant="outline" spacing="6">
+        <a target="_blank" href="https://github.com/Rogersiver">
+          <Button colorScheme="green">GitHub</Button>
         </a>
-      </Link>
-      <Spacer />
-      <a target="_blank" href="https://github.com/Rogersiver">
-        <Button colorScheme="green">GitHub</Button>
-      </a>
-      <Spacer />
-      <a
-        target="_blank"
-        href="https://www.linkedin.com/in/roger-siver-652927138/"
-      >
-        <Button colorScheme="green">LinkedIn</Button>
-      </a>
-    </Flex>
+        <Link href="/assets/Roger_Siver_CV.pdf">
+          <a target="_blank">
+            <Button colorScheme="green" mx={2}>
+              CV
+            </Button>
+          </a>
+        </Link>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/roger-siver-652927138/"
+        >
+          <Button colorScheme="green">LinkedIn</Button>
+        </a>
+      </ButtonGroup>
+    </Center>
   );
 };
 

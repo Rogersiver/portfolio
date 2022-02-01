@@ -1,23 +1,29 @@
 [
   {
-    "lang": "Arduino",
-    "techs": "Teensy/Pi",
-    "name": "Liquid Death Recycle Wall",
-    "link": "liquiddeath.com",
-    "desc": "Interactive marketing installation where recycled cans pushed through holes triggered lighting, audio, and special FX. All prefabricated software/structure and built on site for music events"
-  },
-  {
     "lang": "typescript",
     "techs": "NodeJS + GraphQL",
     "name": "Wavepool",
-    "link": "github.com",
-    "desc": "A spotify companion & powerful utility for sharing songs with your friends. Not only share songs, know how your friends feel about your recommendations"
+    "link": "https://github.com/Rogersiver/wavepool",
+    "short": "Wavepool Source Code",
+    "desc": "A spotify companion & powerful utility for sharing songs with your friends. Not only share songs, know how your friends feel about your recommendations",
+    "img": "/images/wavepool.gif"
   },
   {
     "lang": "Javascript",
     "techs": "MERN",
     "name": "Simple Counter",
-    "link": "simplecounter.rocks",
-    "desc": "Simple workout counter with API connection for exercise tutorials and a congratulations for when you reach a goal 😎"
+    "link": "http://simplecounter.rocks",
+    "short": "Simple Counter",
+    "desc": "Simple workout counter with API connection for exercise tutorials and a congratulations for when you reach a goal 😎",
+    "img": "/images/simplecounter.gif"
+  },
+  {
+    "lang": "Arduino",
+    "techs": "Teensy/Pi",
+    "name": "Liquid Death Recycle Wall",
+    "link": "http://liquiddeath.com",
+    "short": "LD Homepage",
+    "desc": "Interactive marketing installation where recycled cans pushed through holes triggered lighting, audio, and special FX. All prefabricated software/structure and built on site for music events",
+    "img": "/images/liquiddeath.jpg"
   }
 ]

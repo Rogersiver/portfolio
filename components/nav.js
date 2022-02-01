@@ -5,11 +5,11 @@ import {
   useColorModeValue,
   Button,
   Text,
+  Image,
   Spacer,
   Box,
 } from "@chakra-ui/react";
 import Model3d from "./model3d";
-import { Image } from "@chakra-ui/react";
 import Fonts from "./fonts";
 import Toggle from "./colorToggle";
 
@@ -26,14 +26,29 @@ const Nav = () => {
           p={2}
           mx="auto"
         >
+          <Image
+            src={useColorModeValue(
+              "/images/logo-light.svg",
+              "/images/logo-dark.svg"
+            )}
+            boxSize="40px"
+          />
           <Link href="/">
-            <Text cursor="pointer" fontFamily="Fira Code" mx={4} fontSize="2xl">
+            <Text
+              cursor="pointer"
+              fontFamily="Fira Code"
+              mx={4}
+              fontSize={["sm", "md", "lg"]}
+              textDecoration="underline"
+            >
               Roger Siver
             </Text>
           </Link>
           <Spacer />
           <Link href="/projects">
-            <Button mr={2}>Projects</Button>
+            <Button mr={2} variant="outline" size="sm">
+              Projects
+            </Button>
           </Link>
           <Toggle />
         </Flex>

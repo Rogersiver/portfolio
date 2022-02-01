@@ -4,8 +4,8 @@ import LinkButtons from "../components/linkButtons";
 
 const Index = () => (
   <MotionWrapper>
-    <Bio />
     <LinkButtons />
+    <Bio />
   </MotionWrapper>
 );
 
