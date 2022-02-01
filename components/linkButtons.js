@@ -12,7 +12,7 @@ const LinkButtons = () => {
         <Link href="/assets/Roger_Siver_CV.pdf">
           <a target="_blank">
             <Button colorScheme="green" mx={2}>
-              CV
+              Resume
             </Button>
           </a>
         </Link>

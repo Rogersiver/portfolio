@@ -30,34 +30,24 @@ const Nav = () => {
           mx="auto"
         >
           <Link href="/">
-            <Image
-              cursor="pointer"
-              src={useColorModeValue(
-                "/images/logo-light.svg",
-                "/images/logo-dark.svg"
-              )}
-              boxSize="30px"
-            />
-          </Link>
-          <Link href="/">
             {router.pathname === "/" ? (
               <Text
                 cursor="pointer"
                 fontFamily="Fira Code"
                 mx={4}
                 color={useColorModeValue("green.700", "green.200")}
-                fontSize={["sm", "sm", "lg"]}
+                fontSize={["md", "md", "lg"]}
               >
-                Roger Siver
+                [Roger Siver]
               </Text>
             ) : (
               <Text
                 cursor="pointer"
                 fontFamily="Fira Code"
                 mx={4}
-                fontSize={["sm", "sm", "lg"]}
+                fontSize={["md", "md", "lg"]}
               >
-                Roger Siver
+                [Roger Siver]
               </Text>
             )}
           </Link>

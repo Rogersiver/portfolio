@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { chakra, Spinner, Center } from "@chakra-ui/react";
 import * as THREE from "three";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const Model3d = () => {
@@ -49,42 +48,23 @@ const Model3d = () => {
       setLoading(false);
       mountRef.current.appendChild(renderer.domElement);
     };
-    if (Math.random() < 0.5) {
-      const loader = new GLTFLoader(manager);
-      loader.load("/assets/car.gltf", function (gltf) {
-        gltf.scene.traverse(function (child) {
-          if (child.isMesh) {
-            child.castShadow = true;
-          }
-        });
-        scene.add(gltf.scene);
-        gltf.animations;
-        gltf.scene;
-        gltf.scenes;
-        gltf.cameras;
-        gltf.asset;
-        gltf.scene.translateY(-0.6);
-        gltf.scene.rotateY(45);
+
+    const loader = new GLTFLoader(manager);
+    loader.load("/assets/car.gltf", function (gltf) {
+      gltf.scene.traverse(function (child) {
+        if (child.isMesh) {
+          child.castShadow = true;
+        }
       });
-    } else {
-      const loader = new GLTFLoader(manager);
-      loader.load("/assets/retrotv.gltf", function (gltf) {
-        gltf.scene.traverse(function (child) {
-          if (child.isMesh) {
-            child.castShadow = true;
-          }
-        });
-        scene.add(gltf.scene);
-        gltf.animations;
-        gltf.scene;
-        gltf.scenes;
-        gltf.cameras;
-        gltf.asset;
-        gltf.scene.translateY(-0.23);
-        gltf.scene.rotateY(90);
-        gltf.scene.scale.set(0.6, 0.6, 0.6);
-      });
-    }
+      scene.add(gltf.scene);
+      gltf.animations;
+      gltf.scene;
+      gltf.scenes;
+      gltf.cameras;
+      gltf.asset;
+      gltf.scene.translateY(-0.6);
+      gltf.scene.rotateY(45);
+    });
 
     const planeGeo = new THREE.PlaneGeometry(2000, 2000);
     planeGeo.rotateX(-Math.PI / 2);

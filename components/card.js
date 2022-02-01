@@ -7,7 +7,7 @@ import {
   Image,
   Spacer,
   Text,
-  Center,
+  Button,
   Modal,
   ModalContent,
   ModalBody,
@@ -16,6 +16,8 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+
+import { motion } from "framer-motion";
 
 const PicModal = ({ isOpen, onClose, props }) => {
   return (
@@ -49,61 +51,72 @@ const Card = (props) => {
 
   return (
     <chakra.div mx="auto" maxWidth={500} minWidth={300} key={key}>
-      <Flex w="full" alignItems="center" justifyContent="center">
-        <Box
-          w="full"
-          my={2}
-          maxW="md"
-          mx="auto"
-          bg={useColorModeValue("white", "gray.900")}
-        >
-          <PicModal isOpen={isOpen} onClose={onClose} props={props} />
-          <Image
-            cursor="pointer"
-            onClick={onOpen}
-            w="full"
-            h={32}
-            fit="cover"
-            src={img}
-            alt="Article"
-          />
-          <Flex justifyContent="space-between" alignItems="center" p={2}>
-            <chakra.span
-              fontSize="sm"
-              color={useColorModeValue("gray.800", "gray.400")}
-            >
-              {lang}
-            </chakra.span>
-            <chakra.span
-              bg={useColorModeValue("brand.200", "brand.300")}
-              color={useColorModeValue("brand.800", "brand.900")}
-              rounded="full"
-              textTransform="uppercase"
-              fontSize="xs"
-            >
-              {techs}
-            </chakra.span>
-          </Flex>
+      <motion.div
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.5 },
+        }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Flex w="full" alignItems="center" justifyContent="center">
+          <Box
+            my={2}
+            maxW="md"
+            mx="auto"
+            bg={useColorModeValue("white", "gray.900")}
+          >
+            <PicModal isOpen={isOpen} onClose={onClose} props={props} />
+            <Image
+              cursor="pointer"
+              position="relative"
+              onClick={onOpen}
+              w="full"
+              h={32}
+              fit="cover"
+              src={img}
+              rounded="lg"
+              alt="Article"
+            />
+            <Flex justifyContent="space-between" alignItems="center" p={2}>
+              <chakra.span
+                fontSize="sm"
+                color={useColorModeValue("gray.800", "gray.400")}
+              >
+                {lang}
+              </chakra.span>
+              <chakra.span
+                bg={useColorModeValue("brand.200", "brand.300")}
+                color={useColorModeValue("brand.800", "brand.900")}
+                rounded="full"
+                textTransform="uppercase"
+                fontSize="xs"
+              >
+                {techs}
+              </chakra.span>
+            </Flex>
 
-          <Box p={4} cursor="pointer" onClick={onOpen}>
-            <chakra.h1
-              fontSize="xl"
-              fontWeight="bold"
-              mt={2}
-              color={useColorModeValue("gray.800", "white")}
-            >
-              {name}
-            </chakra.h1>
-            <chakra.p
-              fontSize="md"
-              mt={2}
-              color={useColorModeValue("gray.600", "gray.300")}
-            >
-              {desc}
-            </chakra.p>
+            <Box p={4}>
+              <chakra.h1
+                fontSize="xl"
+                fontWeight="bold"
+                mt={2}
+                color={useColorModeValue("gray.800", "white")}
+              >
+                <Link href={link} target="_blank">
+                  {name}
+                </Link>
+              </chakra.h1>
+              <chakra.p
+                fontSize="md"
+                mt={2}
+                color={useColorModeValue("gray.600", "gray.300")}
+              >
+                {desc}
+              </chakra.p>
+            </Box>
           </Box>
-        </Box>
-      </Flex>
+        </Flex>
+      </motion.div>
     </chakra.div>
   );
 };
