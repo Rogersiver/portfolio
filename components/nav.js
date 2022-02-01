@@ -27,19 +27,9 @@ const Nav = () => {
           mx="auto"
         >
           <Link href="/">
-            <Button>
-              <a>
-                <Image src="/images/logo.png" boxSize={10} />
-              </a>
-              <Text
-                fontFamily="Fira Code"
-                mx={4}
-                fontSize="2xl"
-                style={{ cursor: "pointer" }}
-              >
-                Roger Siver
-              </Text>
-            </Button>
+            <Text cursor="pointer" fontFamily="Fira Code" mx={4} fontSize="2xl">
+              Roger Siver
+            </Text>
           </Link>
           <Spacer />
           <Link href="/projects">

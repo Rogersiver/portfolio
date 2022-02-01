@@ -1,8 +1,8 @@
-import { AnimatePresence } from "framer-motion";
+import Footer from "../components/footer";
 import Layout from "../components/layout";
+import { AnimatePresence } from "framer-motion";
 import theme from "../components/theme";
-import LinkButtons from "../components/linkButtons";
-import { ChakraProvider, chakra, Text } from "@chakra-ui/react";
+import { ChakraProvider, chakra } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,18 +21,7 @@ function MyApp({ Component, pageProps }) {
         >
           <Component {...pageProps} key={Component} />
         </AnimatePresence>
-        <LinkButtons />
-        <Text
-          // position="absolute"
-          opacity="50%"
-          bottom="0"
-          width="100%"
-          textAlign="center"
-          mx="auto"
-          px={6}
-        >
-          &copy; Roger Siver 2022
-        </Text>
+        <Footer />
       </chakra.div>
     </ChakraProvider>
   );

@@ -18,6 +18,6 @@
     "techs": "MERN",
     "name": "Simple Counter",
     "link": "simplecounter.rocks",
-    "desc": "Simple workout counter with API connection for exercise tutorials and a congratulations for when your goal is reached 😎"
+    "desc": "Simple workout counter with API connection for exercise tutorials and a congratulations for when you reach a goal 😎"
   }
 ]

@@ -11,11 +11,14 @@ const LinkButtons = () => {
         </a>
       </Link>
       <Spacer />
-      <a href="https://github.com/Rogersiver">
+      <a target="_blank" href="https://github.com/Rogersiver">
         <Button colorScheme="green">GitHub</Button>
       </a>
       <Spacer />
-      <a href="https://www.linkedin.com/in/roger-siver-652927138/">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/roger-siver-652927138/"
+      >
         <Button colorScheme="green">LinkedIn</Button>
       </a>
     </Flex>

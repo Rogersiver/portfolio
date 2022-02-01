@@ -31,8 +31,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
             <chakra.span
               bg={useColorModeValue("brand.200", "brand.300")}
               color={useColorModeValue("brand.800", "brand.900")}
-              px={3}
-              py={1}
+              p={2}
               rounded="full"
               textTransform="uppercase"
               fontSize="xs"
@@ -43,7 +42,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
 
           <Box>
             <chakra.h1
-              fontSize="lg"
+              fontSize="xl"
               fontWeight="bold"
               mt={2}
               color={useColorModeValue("gray.800", "white")}
@@ -51,7 +50,7 @@ const Card = ({ lang, techs, name, link, desc }) => {
               {name}
             </chakra.h1>
             <chakra.p
-              fontSize="sm"
+              fontSize="md"
               mt={2}
               color={useColorModeValue("gray.600", "gray.300")}
             >

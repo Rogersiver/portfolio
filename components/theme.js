@@ -18,6 +18,15 @@ const styles = {
     a: {
       color: mode("green.500", "green.50"),
     },
+    p: {
+      fontFamily: "Heebo",
+    },
+    span: {
+      fontFamily: "Heebo",
+    },
+    h1: {
+      fontFamily: "Heebo",
+    },
   }),
 };
 
@@ -148,12 +157,12 @@ const components = {
   Button: {
     // setup light/dark mode component defaults
     baseStyle: (props) => ({
-      fontFamily: "Fira Mono",
+      fontFamily: "Heebo",
     }),
   },
   Text: {
     baseStyle: (props) => ({
-      fontFamily: "Lato",
+      fontFamily: "Heebo",
     }),
   },
 };
