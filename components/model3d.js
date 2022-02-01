@@ -33,7 +33,7 @@ const Model3d = () => {
     scene.add(light2);
 
     const light3 = new THREE.DirectionalLight(0xffffff, 6);
-    light3.position.set(-1, 3, 3);
+    light3.position.set(-1, 4, 3);
     light3.castShadow = true;
     light3.shadow.camera.top = 2;
     light3.shadow.camera.bottom = -2;
@@ -42,9 +42,6 @@ const Model3d = () => {
     light3.shadow.camera.near = 0.1;
     light3.shadow.camera.far = 14;
     scene.add(light3);
-
-    const ambientLight = new THREE.AmbientLight("0x404040");
-    scene.add(ambientLight);
 
     const manager = new THREE.LoadingManager();
     manager.onStart = function () {};
@@ -83,9 +80,9 @@ const Model3d = () => {
         gltf.scenes;
         gltf.cameras;
         gltf.asset;
-        gltf.scene.translateY(-0.6);
-        gltf.scene.rotateY(45);
-        gltf.scene.scale.set(0.06, 0.06, 0.06);
+        gltf.scene.translateY(-0.23);
+        gltf.scene.rotateY(90);
+        gltf.scene.scale.set(0.6, 0.6, 0.6);
       });
     }
 
@@ -102,8 +99,6 @@ const Model3d = () => {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
-    controls.enableZoom = false;
-    controls.enablePan = false;
     controls.maxPolarAngle = 1.5;
     controls.minPolarAngle = 1;
     controls.autoRotateSpeed = -2;

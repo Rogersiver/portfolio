@@ -31,9 +31,9 @@ const Bio = () => {
           Hey! I'm a Software Developer & Creative based in the USA. I'm
           passionate about creating utility & using useful tools, the art of
           design, and spending my time being a problem solver. I am proficient
-          at NodeJS and Typescript, and am a seasoned Event Manager with
-          experience in Audio, Video, and Lighting Tech. Whether its full-stack
-          software or any live event, I'm your Engineer.
+          at NodeJS and Typescript, and am a seasoned event manager with
+          experience in audio, video, and lighting technologies. Whether its
+          full-stack software or any live event, I'm your Engineer.
         </Text>
         <Text fontSize="md" my={4} style={{ "text-indent": "10%" }}>
           This site was coded with NextJS, ChakraUI, ThreeJS, Framer Motion, and

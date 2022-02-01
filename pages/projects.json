@@ -5,7 +5,7 @@
     "name": "Wavepool",
     "link": "https://github.com/Rogersiver/wavepool",
     "short": "Wavepool Source Code",
-    "desc": "A spotify companion & powerful utility for sharing songs with your friends. Not only share songs, know how your friends feel about your recommendations",
+    "desc": "A spotify companion & powerful utility for sharing songs with your friends. Not only share songs, but also know how your friends feel about your recommendations with detailed data analytics presented with ChartJS",
     "img": "/images/wavepool.gif"
   },
   {
