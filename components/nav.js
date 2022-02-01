@@ -17,7 +17,7 @@ const Nav = () => {
   return (
     <chakra.div>
       <Fonts />
-      <chakra.div backgroundColor={useColorModeValue("gray.200", "#141214")}>
+      <chakra.div backgroundColor={useColorModeValue("white", "#141214")}>
         <Flex
           maxWidth={600}
           textAlign="center"
@@ -26,20 +26,22 @@ const Nav = () => {
           p={2}
           mx="auto"
         >
-          <Image
-            src={useColorModeValue(
-              "/images/logo-light.svg",
-              "/images/logo-dark.svg"
-            )}
-            boxSize="40px"
-          />
+          <Link href="/">
+            <Image
+              cursor="pointer"
+              src={useColorModeValue(
+                "/images/logo-light.svg",
+                "/images/logo-dark.svg"
+              )}
+              boxSize="30px"
+            />
+          </Link>
           <Link href="/">
             <Text
               cursor="pointer"
               fontFamily="Fira Code"
               mx={4}
-              fontSize={["sm", "md", "lg"]}
-              textDecoration="underline"
+              fontSize={["sm", "sm", "lg"]}
             >
               Roger Siver
             </Text>

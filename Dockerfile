@@ -7,5 +7,5 @@ RUN npm run build
 CMD [ "npm", "start" ]
 
 # docker build <path> -t <repo_name>:<tag>
-# docker build . -t nextjs-app:latest
-# docker run -p 3000:3000 nextjs-app
+# docker build . -t rs-portfolio:latest
+# docker run -p 3000:3000 rs-portfolio
