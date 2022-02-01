@@ -12,8 +12,11 @@ import {
 import Model3d from "./model3d";
 import Fonts from "./fonts";
 import Toggle from "./colorToggle";
+import { useRouter } from "next/router";
 
 const Nav = () => {
+  const router = useRouter();
+
   return (
     <chakra.div>
       <Fonts />
@@ -37,20 +40,38 @@ const Nav = () => {
             />
           </Link>
           <Link href="/">
-            <Text
-              cursor="pointer"
-              fontFamily="Fira Code"
-              mx={4}
-              fontSize={["sm", "sm", "lg"]}
-            >
-              Roger Siver
-            </Text>
+            {router.pathname === "/" ? (
+              <Text
+                cursor="pointer"
+                fontFamily="Fira Code"
+                mx={4}
+                color={useColorModeValue("green.700", "green.200")}
+                fontSize={["sm", "sm", "lg"]}
+              >
+                Roger Siver
+              </Text>
+            ) : (
+              <Text
+                cursor="pointer"
+                fontFamily="Fira Code"
+                mx={4}
+                fontSize={["sm", "sm", "lg"]}
+              >
+                Roger Siver
+              </Text>
+            )}
           </Link>
           <Spacer />
           <Link href="/projects">
-            <Button mr={2} variant="outline" size="sm">
-              Projects
-            </Button>
+            {router.pathname === "/projects" ? (
+              <Button mr={2} size="sm" variant="outline" colorScheme="green">
+                Projects
+              </Button>
+            ) : (
+              <Button mr={2} variant="outline" size="sm">
+                Projects
+              </Button>
+            )}
           </Link>
           <Toggle />
         </Flex>

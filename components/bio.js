@@ -17,7 +17,13 @@ const Bio = () => {
         bg={useColorModeValue("white", "gray.900")}
         rounded="md"
       >
-        <Tooltip label="It's Me!" colorScheme="yellow">
+        <Tooltip
+          label="It's Me!"
+          placement="top-end"
+          bg="gray.800"
+          color="yellow.200"
+          hasArrow
+        >
           <Image
             src="/images/me.jpg"
             boxSize="100px"
