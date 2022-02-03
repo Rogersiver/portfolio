@@ -28,8 +28,8 @@ function MyApp({ Component, pageProps }) {
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Component {...pageProps} key={Component} />
+          <Footer />
         </AnimatePresence>
-        <Footer />
       </chakra.div>
     </ChakraProvider>
   );

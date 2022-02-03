@@ -6,7 +6,11 @@ const LinkButtons = () => {
   return (
     <Center my={4}>
       <ButtonGroup variant="outline" spacing="6">
-        <a target="_blank" href="https://github.com/Rogersiver">
+        <a
+          target="_blank"
+          href="https://github.com/Rogersiver"
+          rel="noreferrer"
+        >
           <Button colorScheme="green">GitHub</Button>
         </a>
         <Link href="/assets/Roger_Siver_CV.pdf">
@@ -19,6 +23,7 @@ const LinkButtons = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/roger-siver-652927138/"
+          rel="noreferrer"
         >
           <Button colorScheme="green">LinkedIn</Button>
         </a>

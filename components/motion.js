@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 
-const variants = {
-  hidden: { opacity: 0, x: -200, y: 0, ease: "easeInOut" },
-  enter: { opacity: 1, x: 0, y: 0, ease: "easeInOut" },
-  exit: { opacity: 0, x: 200, y: 0, ease: "easeInOut" },
+const container = {
+  hidden: { opacity: 0, y: -20 },
+  show: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const MotionWrapper = ({ children }) => {
   return (
     <motion.main
-      variants={variants} // Pass the variant object into Framer Motion
+      variants={container} // Pass the variant object into Framer Motion
       initial="hidden"
-      animate="enter"
-      exit="exit"
-      transition={{ type: "linear" }}
-      className=""
+      animate="show"
     >
       {children}
     </motion.main>

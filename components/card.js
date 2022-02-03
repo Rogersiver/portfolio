@@ -7,7 +7,6 @@ import {
   Image,
   Spacer,
   Text,
-  Button,
   Modal,
   ModalContent,
   ModalBody,
@@ -23,7 +22,7 @@ const PicModal = ({ isOpen, onClose, props }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent bg={useColorModeValue("gray.50", "gray.900")}>
         <ModalHeader>
           <Text>{props.name}</Text>
         </ModalHeader>
@@ -49,15 +48,14 @@ const Card = (props) => {
   const { lang, techs, name, link, desc, img, key, short } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
-    <chakra.div mx="auto" maxWidth={500} minWidth={300} key={key}>
-      <motion.div
-        whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.5 },
-        }}
-        whileTap={{ scale: 0.9 }}
-      >
+    <motion.div variants={item} exit={{ opacity: 0 }}>
+      <chakra.div mx="auto" maxWidth={500} minWidth={300} key={key}>
         <Flex w="full" alignItems="center" justifyContent="center">
           <Box
             my={2}
@@ -116,8 +114,8 @@ const Card = (props) => {
             </Box>
           </Box>
         </Flex>
-      </motion.div>
-    </chakra.div>
+      </chakra.div>
+    </motion.div>
   );
 };
 
