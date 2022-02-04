@@ -25,6 +25,11 @@ function Layout({ children }) {
           sizes="16x16"
           href="/images/favicon-16x16.png"
         />
+        <link rel="preload" as="image" href="/images/me.jpg"/>
+        <link rel="preload" as="image" href="/images/logo.jpg"/>
+        <link rel="preload" as="image" href="/images/simplecounter.gif"/>
+        <link rel="preload" as="image" href="/images/wavepool.gif"/>
+        <link rel="preload" as="image" href="/images/liquiddeath.jpg"/>
         <link rel="manifest" href="/images/site.webmanifest" />
         <title>Roger Siver</title>
       </Head>
