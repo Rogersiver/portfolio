@@ -13,7 +13,7 @@ const LinkButtons = () => {
         >
           <Button colorScheme="green">GitHub</Button>
         </a>
-        <Link href="/assets/Roger_Siver_CV.pdf">
+        <Link href="/assets/Roger_Siver_CV.pdf" target="_blank">
           <a target="_blank">
             <Button colorScheme="green" mx={2}>
               Resume

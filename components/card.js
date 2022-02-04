@@ -4,7 +4,7 @@ import {
   Flex,
   useColorModeValue,
   Link,
-  Image,
+  // Image,
   Spacer,
   Text,
   Modal,
@@ -15,6 +15,8 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+
+import Image from 'next/image';
 
 import { motion } from "framer-motion";
 
@@ -28,7 +30,15 @@ const PicModal = ({ isOpen, onClose, props }) => {
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody p={4}>
-          <Image w="full" src={props.img} alt="Article" mb={4} />
+        <Image
+              cursor="pointer"
+              position="relative"
+              width={700}
+              height={400}
+              objectFit="fill"
+              src={props.img}
+              alt="Article"
+            />
           <chakra.p mb={2}>{props.desc}</chakra.p>
           <hr></hr>
           <Flex>
@@ -45,7 +55,7 @@ const PicModal = ({ isOpen, onClose, props }) => {
 };
 
 const Card = (props) => {
-  const { lang, techs, name, link, desc, img, key, short } = props;
+  const { lang, techs, name, link, desc, img } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const item = {
@@ -54,8 +64,8 @@ const Card = (props) => {
   };
 
   return (
-    <motion.div variants={item} exit={{ opacity: 0 }}>
-      <chakra.div mx="auto" maxWidth={500} minWidth={300} key={key}>
+    <motion.div variants={item} exit={{ opacity: 0 }} whileTap={{scale: 0.9, transition: 0.5}}>
+      <chakra.div mx="auto" maxWidth={500} minWidth={300}>
         <Flex w="full" alignItems="center" justifyContent="center">
           <Box
             my={2}
@@ -64,17 +74,19 @@ const Card = (props) => {
             bg={useColorModeValue("white", "gray.900")}
           >
             <PicModal isOpen={isOpen} onClose={onClose} props={props} />
+            <chakra.div cursor="pointer" overflow="hidden" roundedTop="2xl">
             <Image
               cursor="pointer"
               position="relative"
               onClick={onOpen}
-              w="full"
-              h={32}
-              fit="cover"
+              width={600}
+              height={200}
+              objectFit="cover"
               src={img}
-              rounded="lg"
+              priority={true}
               alt="Article"
             />
+            </chakra.div>
             <Flex justifyContent="space-between" alignItems="center" p={2}>
               <chakra.span
                 fontSize="sm"
